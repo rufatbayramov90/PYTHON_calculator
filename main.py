@@ -21,3 +21,8 @@ number2 = int(input("What is the second number?: "))
 for symbol in operations:
     print(symbol)
 symbol_Operations = input("Pick an operation from the line above")
+calculation_function = operations[symbol_Operations]
+answer = calculation_function(number1,number2)
+
+print(f"{number1} {symbol_Operations} {number2} = {answer}")
+
