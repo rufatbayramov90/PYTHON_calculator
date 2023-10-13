@@ -14,27 +14,28 @@ operations = {
     "/" : divide 
 }
 
-number1 = int(input("What is the first number?: "))
+def calculator():   
+    number1 = float(input("What is the first number?: "))
 
-
-
-for symbol in operations:
+    for symbol in operations:
     print(symbol)
-should_continue = True
+    should_continue = True
 
 
-while should_continue:
- symbol_Operations = input("Pick an operation:  ")
- number2 = int(input("What is the second number:  "))
- calculation_function = operations[symbol_Operations]
- answer = calculation_function(number1,number2)
+    while should_continue:
+        symbol_Operations = input("Pick an operation:  ")
+        number2 = float(input("What is the second number:  "))
+        calculation_function = operations[symbol_Operations]
+        answer = calculation_function(number1,number2)
 
- print(f"{number1} {symbol_Operations} {number2} = {answer}")
+        print(f"{number1} {symbol_Operations} {number2} = {answer}")
 
- if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to exit:  ")=="y":
-    number1 = answer
- else:
-    should_continue = False
+        if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation:  ")=="y":
+            number1 = answer
+        else:
+            should_continue = False
+            calculator()
+calculator()
 
 
 
